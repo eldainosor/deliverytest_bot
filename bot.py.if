@@ -1,0 +1,20 @@
+    if message.text=="Oferta del día":
+        cid = message.chat.id  
+        # sendPhoto
+        photo = open('img/oferta.jpeg', 'rb')
+        bot.send_photo(cid, photo)
+        bot.send_message( cid, "[b]Oferta del día[/b]\n\nAlguna oferta deliciosa en la cual puede sonar a beneficiosa para el antojo de uno, no?\n\nPrecio: 120")
+        markup = types.ReplyKeyboardMarkup(row_width=1)
+        markup = types.ReplyKeyboardMarkup()
+        itembtna = types.KeyboardButton('Si, deseo pedirlo')
+        itembtnv = types.KeyboardButton('No, gracias')
+        markup.row(itembtna, itembtnv)
+        bot.send_message(cid, "Desea pedir esta oferta?", reply_markup=markup)
+        
+    elif message.text=="Acerca de":
+        cid = message.chat.id  
+        # sendPhoto
+        bot.send_message( cid, "[b]Oferta del día[/b]\n\nAlguna oferta deliciosa en la cual puede sonar a beneficiosa para el antojo de uno, no?\n\nPrecio: 120")
+    else:
+        cid = message.chat.id 
+        bot.send_message(cid, "Trabajo en proceso")

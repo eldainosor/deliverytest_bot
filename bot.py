@@ -23,7 +23,7 @@ def send_welcome(message):
     itembtne = types.KeyboardButton('Acerca de')
     markup.row(itembtna, itembtnv)
     markup.row(itembtnc, itembtnd, itembtne)
-    bot.send_message(cid, "Choose one letter:", reply_markup=markup)
+    bot.send_message(cid, "Que desea ver?", reply_markup=markup)
 
 #Acá es hacer funciones para cada menu
 
@@ -31,19 +31,6 @@ def send_welcome(message):
 def echo_message(message):
     cid = message.chat.id 
     
-    if message.text=="Oferta del día":
-        cid = message.chat.id  
-        # sendPhoto
-        photo = open('img/oferta.jpeg', 'rb')
-        bot.send_photo(cid, photo)
-        bot.send_message( cid, "[b]Oferta del día[/b]\n\nAlguna oferta deliciosa en la cual puede sonar a beneficiosa para el antojo de uno, no?\n\nPrecio: 120")
-    elif message.text=="Acerca de":
-        cid = message.chat.id  
-        # sendPhoto
-        bot.send_message( cid, "[b]Oferta del día[/b]\n\nAlguna oferta deliciosa en la cual puede sonar a beneficiosa para el antojo de uno, no?\n\nPrecio: 120")
-    else:
-        cid = message.chat.id 
-        bot.send_message(cid, "Trabajo en proceso")
     
 
 ##############     
